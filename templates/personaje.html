@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- necesitamos encerrar toda la plantilla en div xq flexbox necesita tener un contenedor papa y un contenedor hijo -->
+    <div class="flex justify-center">
+      <div class="bg-blue-300 w-40 h-52 rounded">
+        <img
+          class="rounded"
+          src="{{ datos_morty_web['url_imagen'] }}"
+          alt="rick fachero"
+        />
+        <div class="ml-2">
+          <!-- Con Jinja, usamos Python en HTML -->
+          <h1 class="text-xl font-semibold mt-2">
+            {{ datos_morty_web["nombre"] }}
+          </h1>
+          <p class="text-[10px]">{{ datos_morty_web["descripcion"] }}</p>
+          <p class="text-[11px] font-semibold mt-2.5">
+            ultima ubicacion conocida
+          </p>
+          <p class="text-[10px]">{{ datos_morty_web["ult_ubicacion"] }}</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
